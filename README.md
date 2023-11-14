@@ -1,7 +1,89 @@
 # 🏪 KurbanMobile Store
 
-## Tugas 7
 
+### 📝 Tugas 8
+
+#### 1. 🔄 Perbedaan dan Contoh Penggunaan `Navigator.push()` vs `Navigator.pushReplacement()`
+- **`Navigator.push()`**: 🆕 Menambah rute baru ke tumpukan rute, memungkinkan kembali ke rute sebelumnya. Ini menaruh rute baru di puncak tumpukan, menampilkan ke pengguna.
+
+  **👉 Contoh Penggunaan**:
+  ```dart
+  Navigator.push(
+    context,
+    MaterialPageRoute(builder: (context) => ShopFormPage()),
+  );
+  ```
+
+- **`Navigator.pushReplacement()`**: 🔄 Mengganti rute aktif dengan rute baru, mengubah tampilan tanpa mengubah tumpukan rute lainnya.
+
+  **👉 Contoh Penggunaan**:
+  ```dart
+  Navigator.pushReplacement(
+    context,
+    MaterialPageRoute(builder: (context) => MyHomePage()),
+  );
+  ```
+
+#### 2. 🎨 Widget Layout di Flutter dan Konteks Penggunaannya
+- **`Container`**: 🧰 Widget serba guna untuk pengaturan lainnya.
+- **`Column` dan `Row`**: ↕️↔️ Mengatur widget secara vertikal atau horizontal.
+- **`Stack`**: 🥞 Mengizinkan penumpukan widget.
+- **`ListView`**: 📜 Menampilkan daftar yang bisa digulir.
+- **`GridView`**: 🟩 Menampilkan item dalam format grid.
+- **`Expanded` dan `Flexible`**: 📏 Menyediakan ruang sesuai proporsi atau prioritas.
+- **`SizedBox`**: 📦 Menentukan ukuran tetap atau sebagai pemisah.
+
+#### 3. 📝 Elemen Input pada Formulir dan Alasannya
+- **`TextFormField`**: 🖊️ Digunakan untuk input teks seperti nama, harga, ukuran, jumlah, dan deskripsi item.
+  - **Alasan**: 🎯 Memfasilitasi verifikasi dan penanganan perubahan nilai, dengan dekorasi dan label yang jelas.
+- **`ElevatedButton`**: 🆗 Untuk mengirim dan memvalidasi formulir.
+  - **Alasan**: 🚀 Memulai aksi seperti penyimpanan data pasca validasi.
+
+#### 4. 🏗️ Implementasi Clean Architecture pada Aplikasi Flutter
+- **Lapisan Fitur**: 📱 UI dan pengendali event dengan widget Flutter.
+- **Lapisan Domain**: 💼 Berisi Entities, Use Cases, dan Repository Interfaces, fokus aturan bisnis.
+- **Lapisan Data**: 💾 Bertanggung jawab atas pengambilan data dan implementasi repository.
+- **Resources dan Shared Library**: 🌐 Menyediakan aset dan komponen yang dapat digunakan kembali.
+- **Pemisahan Logika Bisnis**: 🔍 Memisahkan logika bisnis dari presentasi dan data.
+- **Dependency Injection**: 🔗 Menghubungkan lapisan domain dan data.
+- **Kode yang Mudah Dimengerti**: 📖 Nama kelas dan metode yang jelas untuk navigasi mudah.
+- **Tes Unit**: ✅ Memastikan kebenaran logika bisnis.
+- **Sederhana Namun Efektif**: 🎯 Fokus pada pengembangan dan pemeliharaan yang mudah.
+
+
+### 5. Jelaskan bagaimana cara kamu mengimplementasikan checklist di atas secara step-by-step! (bukan hanya sekadar mengikuti tutorial)
+- [x] **Membangun Halaman Formulir Baru untuk Menambahkan Item** 📄
+  - Pada folder `lib`, ciptakan `shoplist_form.dart` dan isikan dengan kode spesifik.
+
+- [x] **Integrasi Tiga Elemen Input: `name`, `amount`, `description`** 📝
+  - Dalam `_ShopFormPageState` di `shoplist_form.dart`, tambahkan kode ini untuk elemen input sesuai model aplikasi Django Anda.
+
+- [x] **Menambahkan Tombol `Save`** 💾
+  - Pada `_ShopFormPageState` di `shoplist_form.dart`, dalam bagian `return Scaffold(...)`, sertakan kode untuk tombol `Save`.
+
+- [x] **Validasi Elemen Input Formulir** ✅
+  - Pastikan tidak ada elemen input yang kosong:
+    - Di `_ShopFormPageState` pada `shoplist_form.dart`, di setiap `child: TextFormField(...)`, tambahkan validasi ini.
+  - Sesuaikan tipe data elemen input dengan model:
+    - Di bagian yang sama, lakukan validasi tipe data pada setiap `TextFormField`.
+
+- [x] **Navigasi ke Halaman Formulir dari Halaman Utama** 🚀
+  - Di `MyHomePage` pada `menu.dart`, di bagian `return Scaffold(...)`, sertakan kode untuk navigasi ke halaman formulir.
+
+- [x] **Menampilkan Isi Formulir dalam Pop-up Setelah Menekan `Save`** 📲
+  - Di `_ShopFormPageState` pada `shoplist_form.dart`, di bagian `child: Column(...)` dan `Align(...)`, tambahkan kode untuk menampilkan pop-up.
+
+- [x] **Pembuatan Drawer dengan Opsi `Halaman Utama` dan `Tambah Item`** 🗄️
+  - Di `LeftDrawer` pada `left_drawer.dart`, di bagian `return Drawer(...)`, sertakan kode untuk drawer dengan dua opsi ini.
+  - Untuk opsi `Halaman Utama`, pastikan aplikasi mengarah ke halaman utama:
+    - Di `LeftDrawer` di `left_drawer.dart`, pada bagian `ListTile` untuk halaman utama, tambahkan kode ini.
+
+- [x] **Add-Commit-Push ke GitHub** 🌐
+  - Lakukan proses add-commit-push pada folder utama ke repositori GitHub yang telah ditentukan.
+
+
+
+## Tugas 7
 
 ### Apa perbedaan utama antara stateless dan stateful widget dalam konteks pengembangan aplikasi Flutter?
 1. **StatelessWidget**
