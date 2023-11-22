@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:kurbanmobile/screens/list_item.dart';
 import 'package:kurbanmobile/screens/menu.dart';
 import 'package:kurbanmobile/screens/shoplist_form.dart';
 
@@ -57,9 +58,20 @@ class LeftDrawer extends StatelessWidget {
               Navigator.pushReplacement(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => ShopFormPage(),
+                    builder: (context) => const ShopFormPage(),
                   ));
             },
+          ),
+          ListTile(
+              leading: const Icon(Icons.shopping_basket),
+              title: const Text('Daftar Produk'),
+              onTap: () {
+                  // Route menu ke halaman produk
+                  Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const ItemPage()),
+                  );
+              },
           ),
         ],
       ),
